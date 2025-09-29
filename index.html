@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jinsei - Bienvenida</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: radial-gradient(circle at 30% 30%, #f4ebea 0%, #c8e0d2 48%, #85c5a0 100%);
+    margin:0;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+  }
+  .container {
+    background: linear-gradient(180deg, #e5f5fa 60%, #b0cbc3 100%);
+    width: 28rem;
+    border-radius: 40px;
+    padding: 2.6rem 2rem 3rem;
+    box-shadow: 0 6px 20px #b5c7bb88;
+    text-align: center;
+  }
+  img.logo {
+    width: 130px;
+    border-radius: 50%;
+    box-shadow: 0 4px 32px #b5c7bb40;
+    margin-bottom: 1rem;
+    background: #e9f3ec;
+  }
+  h1 {
+    color: #28538c;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.25rem;
+  }
+  .tagline {
+    font-size: 1.1rem;
+    color: #5fa5b6;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  p.welcome-msg {
+    color: #47775a;
+    font-size: 1.12rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  .btn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .btn-incognito {
+    background-color: #28538c;
+    color: white;
+  }
+  .btn-incognito:hover {
+    background-color: #377e63;
+  }
+  .btn-login {
+    background-color: #e3e9f4;
+    color: #28538c;
+    box-shadow: inset 0 0 8px #c8e0d2;
+  }
+  .btn-login:hover {
+    background-color: #b7cbdc;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="iconapp.png" alt="Jinsei Logo" class="logo" />
+    <h1>JINSEI</h1>
+    <div class="tagline">LIFE SUPPORT CHAT</div>
+    <p class="welcome-msg">
+      Bienvenido a Jinsei, un espacio seguro para escucharte y apoyarte.<br />
+      Puedes comenzar a chatear de forma incógnita o ingresar tus datos para una experiencia personalizada.
+    </p>
+    <button class="btn btn-incognito" onclick="startIncognito()">Iniciar chat en incógnito</button>
+    <button class="btn btn-login" onclick="goToLogin()">Ingresar mis datos</button>
+  </div>
+  <script>
+    function startIncognito() {
+      // Aquí redirigir o iniciar chat en modo anónimo
+      alert('Chat iniciado en modo incógnito');
+      // window.location.href = '/chat'; // ejemplo redirección
+    }
+    function goToLogin() {
+      // Aquí redirigir a formulario login/registro
+      alert('Ir a ingreso de datos');
+      // window.location.href = '/login'; // ejemplo redirección
+    }
+  </script>
+</body>
+</html>

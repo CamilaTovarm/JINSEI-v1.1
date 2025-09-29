@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jinsei - Ingreso de Datos</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: radial-gradient(circle at 30% 30%, #f4ebea 0%, #c8e0d2 48%, #85c5a0 100%);
+    margin:0; padding:0;
+    display:flex; align-items:center; justify-content:center;
+    height:100vh;
+  }
+  .container {
+    background: linear-gradient(180deg, #e5f5fa 60%, #b0cbc3 100%);
+    width: 28rem;
+    border-radius: 40px;
+    padding: 2.6rem 2rem 3rem;
+    box-shadow: 0 6px 20px #b5c7bb88;
+    text-align: center;
+  }
+  img.logo {
+    width: 130px;
+    border-radius: 50%;
+    box-shadow: 0 4px 32px #b5c7bb40;
+    margin-bottom: 1rem;
+    background: #e9f3ec;
+  }
+  h1 {
+    color: #28538c;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.25rem;
+  }
+  .tagline {
+    font-size: 1.1rem;
+    color: #5fa5b6;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  label {
+    text-align: left;
+    color: #47775a;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 1rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 9px;
+    border: 1px solid #c8e0d2;
+    outline: none;
+    box-shadow: 0 1px 4px #e9edf522;
+    color: #28538c;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus {
+    border-color: #28538c;
+    box-shadow: 0 0 8px #28538c88;
+  }
+  .btn-submit {
+    background-color: #28538c;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease;
+  }
+  .btn-submit:hover {
+    background-color: #377e63;
+  }
+  .back-link {
+    margin-top: 1.2rem;
+    color: #5fa5b6;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .back-link:hover {
+    color: #28538c;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="iconapp.png" alt="Jinsei Logo" class="logo" />
+    <h1>JINSEI</h1>
+    <div class="tagline">LIFE SUPPORT CHAT</div>
+    <form id="dataForm" onsubmit="submitForm(event)">
+      <label for="fullName">Nombre Completo</label>
+      <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo" />
+
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com" />
+
+      <label for="phone">Teléfono de Contacto</label>
+      <input type="tel" id="phone" name="phone" required placeholder="+52 55 1234 5678" pattern="[\+0-9\s\-]{7,15}" />
+
+      <button type="submit" class="btn-submit">Comenzar chat</button>
+    </form>
+    <div class="back-link" onclick="goBack()">← Volver</div>
+  </div>
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+    // Aquí la lógica para manejar datos, validar y avanzar al chat
+    alert("Gracias " + document.getElementById('fullName').value + ", iniciando chat...");
+    // Por ejemplo, redirigir:
+    // window.location.href = '/chat?user=' + encodeURIComponent(document.getElementById('fullName').value);
+  }
+  function goBack() {
+    // Redirecciona a la página anterior o de bienvenida
+    alert("Volviendo a la página de bienvenida");
+    // window.location.href = '/bienvenida';
+  }
+</script>
+</body>
+</html>
