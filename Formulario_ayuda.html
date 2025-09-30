@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formulario de Apoyo Jinsei</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #eafaf8 50%, #e3e9f4 110%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .form-container {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 6px 28px #28538c22;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.2rem 2rem 2rem;
+  }
+  /* Encabezado con logos */
+  .form-header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  .form-header-logos img.logo-app {
+    height: 64px;
+    object-fit: contain;
+  }
+  .form-header-logos img.logo-institucion {
+    height: 48px;
+    object-fit: contain;
+  }
+  .form-title {
+    color: #28538c;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  .form-desc {
+    color: #5fa5b6;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    max-width: 420px;
+    text-align: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1rem;
+    max-width: 420px;
+    text-align: left;
+  }
+  label {
+    color: #377e63;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+  input, select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 9px;
+    border: 1px solid #c8e0d2;
+    outline: none;
+    font-size: 1rem;
+    color: #28538c;
+    background: #f6fafb;
+    box-shadow: 0 1px 4px #e9edf522;
+    transition: border-color 0.24s;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  input:focus, select:focus {
+    border-color: #28538c;
+    box-shadow: 0 0 8px #28538c55;
+  }
+  ::placeholder {
+    font-size: 1rem;
+  }
+  /* Botón */
+  .btn-submit {
+    margin-top: 0.8rem;
+    background: #28538c;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.08rem;
+    border: none;
+    padding: 0.9rem 0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px #28538c22;
+    transition: background 0.23s;
+    width: 100%;
+  }
+  .btn-submit:hover {
+    background: #4487e5;
+  }
+</style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- Logos arriba -->
+    <div class="form-header-logos">
+      <img src="iconapp.png" alt="Logo App" class="logo-app" />
+      <img src="udec.png" alt="Logo Institución" class="logo-institucion" />
+    </div>
+
+    <div class="form-title">Solicita Apoyo Institucional</div>
+    <div class="form-desc">
+      Por favor, completa tus datos y un orientador te contactará para brindarte acompañamiento.
+    </div>
+    <form id="apoyoForm" onsubmit="handleSubmit(event)">
+      <label for="fullName">Nombre completo</label>
+      <input type="text" id="fullName" name="fullName" required placeholder="👤 Escribe tu nombre completo" />
+      
+      <label for="idType">Tipo de documento</label>
+      <select id="idType" name="idType" required>
+        <option value="" disabled selected>📄 Selecciona...</option>
+        <option value="DNI">DNI</option>
+        <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+        <option value="Pasaporte">Pasaporte</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <label for="idNumber">Número de documento</label>
+      <input type="text" id="idNumber" name="idNumber" required placeholder="🔢 Escribe tu número de documento" />
+
+      <label for="email">Correo institucional</label>
+      <input type="email" id="email" name="email" required placeholder="📧 ejemplo@ucundinamarca.edu.co" />
+
+      <label for="phone">Teléfono celular</label>
+      <input type="tel" id="phone" name="phone" required placeholder="📱 +57 321 123 5678" pattern="[\+0-9\s\-]{7,15}" />
+      
+      <button type="submit" class="btn-submit">Enviar solicitud 🚀</button>
+    </form>
+  </div>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("¡Solicitud enviada! Un orientador se pondrá en contacto contigo.");
+    }
+  </script>
+</body>
+</html>
