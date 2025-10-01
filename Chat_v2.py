@@ -1,24 +1,19 @@
-# ============================================
-# Chat de apoyo emocional con Mistral (VS Code)
-# ============================================
+# Chat con Mistral
 
 from huggingface_hub import InferenceClient
 
-# ⚠️ Aquí pones tu token de Hugging Face
 HF_TOKEN = "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"
 
-# Cliente de Hugging Face
 client = InferenceClient("mistralai/Mistral-7B-Instruct-v0.2", token=HF_TOKEN)
 
-# ================================
-# Prompt personalizado
-# ================================
+
+# Prompt
 system_prompt = """
 Eres un chatbot de apoyo emocional para estudiantes universitarios en Colombia.
 Responde SIEMPRE en español, de forma empática, cálida y cercana, como si fueras un buen amigo que escucha.
 No uses frases impersonales como "Hola estudiante".
 En vez de eso, usa saludos naturales como "hola", "qué gusto hablar contigo", "entiendo lo que sientes".
-Si es necesario recomendar ayuda profesional, sugiere líneas de atención en Colombia como la Línea 192 o líneas locales de apoyo emocional.
+Si es necesario recomendar ayuda profesional, sugiere líneas de atención en Colombia como la Línea 106 o líneas locales de apoyo emocional.
 Nunca respondas en inglés ni uses tecnicismos difíciles.
 """
 
@@ -41,9 +36,7 @@ def chat_con_mistral(mensaje_usuario):
     return texto_respuesta
 
 
-# ================================
-# 🚀 Chat interactivo
-# ================================
+# Chat
 def main():
     print("ChatBot - Mistral.")
     print("Escribe 'salir' para terminar.\n")
